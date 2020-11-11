@@ -1,0 +1,98 @@
+<!-- include header -->
+<% include ./partials/header %>
+
+<body>
+    <div class="fluid-container"> 
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand text-primary" href="#">
+                <i class="fa fa-dot-circle"></i>
+                Colorbox
+            </a>
+            <span class="navbar-text d-md-none mx-md-5 result"></span>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav justify-content-end m-auto mt-2 mt-lg-0">
+                    <li class="nav-item d-none d-md-block justify-content-center new">
+                        <a class="nav-link text-primary" href="#">New Color</a>
+                    </li>
+                </ul>
+                <span class="navbar-text d-none d-md-block mx-md-5 result"></span>
+                
+                <ul class="navbar-nav justify-content-end m-auto mt-2 mt-lg-0">
+                    <li class="nav-item easy">
+                        <a class="nav-link text-primary" href="#">Easy</a>
+                    </li>
+                    <li class="nav-item active medium">
+                        <a class="nav-link text-primary" href="#">Medium</a>
+                        <span class="sr-only">(current)</span>
+                    </li>
+                    <li class="nav-item hard">
+                        <a class="nav-link text-primary" href="#">Hard</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <span class="nav-link float-left">Signed In As <%= user.username %></span>
+                        <a class="nav-link text-primary float-right" href="/logout"><i class="fa fa-user-minus"></i> Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="navbar-nav nav-item d-md-none justify-content-center new">
+                <a class="nav-link text-primary" href="#">New Color</a>
+        </div>
+        <div class="container">
+            <% if (error && error.length > 0){ %>
+                <div class="alert alert-danger alert-dismissible m-2 p-2">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> <%= error %>
+                </div>
+            <% } %>
+            <% if (success && success.length > 0){ %>
+                <div class="alert alert-success alert-dismissible m-2 p-2">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong> <%= success %>
+                </div>
+            <% } %>
+            </div>
+        <main role="main">
+            <section class="jumbotron text-center bg-white d-none d-sm-block">
+                <div class="container">
+                    <h1><i class="fa fa-dot-circle"></i> Colorbox</h1>
+                    <p class="lead text-muted">
+                        Colorbox is a game designed for web developers and 
+                        anyone interested in digging into recognition of rgb 
+                        colors.
+                    </p>
+                </div>
+            </section>
+            <div class="container d-flex text-center p-3 my-3 text-white rounded shadow-sm">
+                <h2 class="w-100">RGB(211, 206, 13)</h2>
+            </div>
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <button class="col-4"></button>
+                        <button class="col-4"></button>
+                        <button class="col-4"></button>
+                    </div>
+                    <div class="row">
+                        <button class="col-4"></button>
+                        <button class="col-4"></button>
+                        <button class="col-4"></button>
+                    </div>
+                    <div class="row">
+                        <button class="col-4"></button>
+                        <button class="col-4"></button>
+                        <button class="col-4"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+<!-- include footer -->
+<% include ./partials/footer %>

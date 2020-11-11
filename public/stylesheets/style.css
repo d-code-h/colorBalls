@@ -1,0 +1,82 @@
+html, body, article {
+    height: 100%;
+}
+body.authenticate {
+    background-color: rgb(245, 245, 245);
+}
+article.text-center {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: rgb(245, 245, 245);
+}
+.form-signup, .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+.form-signup input[name="username"], .form-signup input[name="password"], .form-signin input[name="username"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signup input[name="confPassword"], .form-signin input[name="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signup .form-control, .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signup .form-control:focus, .form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin .checkbox {
+    font-weight: 400;
+}
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+section .col-4 {
+    -ms-flex: 0 0 29%;
+    flex: 0 0 29%;
+    max-width: 29%;
+    height: 19rem;
+    margin: 2%;
+    border: 0;
+    border-radius: 50%;
+}
+.active a{
+    color: #286090 !important;
+}
+form i.fa {
+    font-size: 500%;
+    color: rgb(0, 123, 255);
+}
+@media screen and (max-width: 575px) {
+    section .col-4 {
+        height: 9rem;
+    }
+}
+@media screen and (min-width: 576px) {
+    section .col-4 {
+        height: 11rem;
+    }
+}
+@media screen and (min-width: 992px) {
+    section .col-4 {
+        height: 16rem;
+    }
+}
+@media screen and (min-width: 1200px) {
+    section .col-4 {
+        height: 19rem;
+    } 
+} 

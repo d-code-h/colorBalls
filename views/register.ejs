@@ -1,0 +1,38 @@
+<!-- include header -->
+<% include ./partials/header %>
+<body class="authenticate">
+    <div class="container">
+        <% if (error && error.length > 0){ %>
+            <div class="alert alert-danger alert-dismissible m-2 p-2">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Error!</strong> <%= error %>
+            </div>
+        <% } %>
+        <% if (success && success.length > 0){ %>
+            <div class="alert alert-success alert-dismissible m-2 p-2">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong> <%= success %>
+            </div>
+        <% } %>
+    </div>
+    <article class="text-center">
+        <form action="/register" class="form-signup" method="POST">
+            <i class="fa fa-dot-circle mb-4"></i>
+    
+            <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
+                <label class="sr-only sr-only-focuseable" for="username">Username:</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autocomplete="off" autofocus>
+                
+                <label class="sr-only sr-only-focuseable" for="password">Password:</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" autocomplete="off" required>
+    
+                <label class="sr-only sr-only-focuseable" for="confPassword">Confirm Password:</label>
+                <input type="password" name="confPassword" class="form-control" id="confPassword" placeholder="Confirm Password" autocomplete="off" required>
+                
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+                <h6 class="m-3">Have a login details? <a href="/login">Login</a></h6>
+        </form>
+    </article>       
+
+<!-- include footer -->
+<% include ./partials/footer %>
