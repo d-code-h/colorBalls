@@ -9,12 +9,14 @@ const   express                 =   require("express"),
         path                    =   require('path'),
         cookieParser            =   require('cookie-parser'),
         logger                  =   require('morgan'),
-        indexRouter             =   require('./routes/index'); //index Route
+        indexRouter             =   require('./routes/index'),
+        User                    =   require("./models/Users"); //index Route
 
 
 // Configurations
 // mongoose
-mongoose.connect("mongodb://localhost/color_balls");
+// mongoose.connect("mongodb://localhost/color_balls");
+mongoose.connect("mongodb+srv://david:david1@cluster0.mkziq.mongodb.net/colorBox?retryWrites=true&w=majority");
 // express-session
 app.use(require("express-session")({
     secret: "Color teaches love",
@@ -23,15 +25,6 @@ app.use(require("express-session")({
 }));
 
 
-// models
-const userSchema = new mongoose.Schema({
-    username: String,
-    password: String
-});
-
-userSchema.plugin(passportLocalMongoose);
-
-var User = mongoose.model("User", userSchema);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

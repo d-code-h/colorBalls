@@ -1,6 +1,7 @@
-const express   =   require('express'),
-    passport    =   require("passport"),
-    router      =   express.Router();
+const express     =   require('express'),
+      passport    =   require("passport"),
+      router      =   express.Router(),
+      User        =   require("../models/Users"); //index Route
 
 // ROUTES
 // index
