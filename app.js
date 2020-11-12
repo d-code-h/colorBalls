@@ -3,7 +3,6 @@ const   express                 =   require("express"),
         mongoose                =   require("mongoose"),
         passport                =   require("passport"),
         LocalStrategy           =   require("passport-local"),
-        passportLocalMongoose   =   require("passport-local-mongoose"),
         flash                   =   require("connect-flash"),
         createError             =   require('http-errors'),
         path                    =   require('path'),
@@ -15,9 +14,8 @@ const   express                 =   require("express"),
 
 // Configurations
 // mongoose
-// mongoose.connect("mongodb://localhost/color_balls");
-// mongodb+srv://david:david1@cluster0.mkziq.mongodb.net/colorBox?retryWrites=true&w=majority
-mongoose.connect(process.env.DATABASEURL);
+var url = process.env.DATABASEURL || "mongodb://localhost/color_balls"
+mongoose.connect(url);
 
 // express-session
 app.use(require("express-session")({
