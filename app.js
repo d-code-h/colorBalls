@@ -15,7 +15,10 @@ const   express                 =   require("express"),
 // Configurations
 // mongoose
 var url = process.env.DATABASEURL || "mongodb://localhost/color_balls"
-mongoose.connect(url);
+mongoose.connect(url, { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // express-session
 app.use(require("express-session")({

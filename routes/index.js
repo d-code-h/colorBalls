@@ -1,3 +1,4 @@
+// packages
 const express     =   require('express'),
       passport    =   require("passport"),
       router      =   express.Router(),
@@ -42,7 +43,7 @@ router.get("/register", (req, res) => {
 
 // register logic
 router.post("/register", (req, res) => {
-  if (req.body.password == req.body.confPassword){
+  if ((req.body.password == req.body.confPassword)){
       User.register(new User({username: req.body.username}), req.body.password, (err, createdUser) => {
           if (err){
               req.flash("error", "Something went wrong");
