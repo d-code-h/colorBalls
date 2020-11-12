@@ -16,7 +16,9 @@ const   express                 =   require("express"),
 // Configurations
 // mongoose
 // mongoose.connect("mongodb://localhost/color_balls");
-mongoose.connect("mongodb+srv://david:david1@cluster0.mkziq.mongodb.net/colorBox?retryWrites=true&w=majority");
+// mongodb+srv://david:david1@cluster0.mkziq.mongodb.net/colorBox?retryWrites=true&w=majority
+mongoose.connect("process.env.DATABASEURL");
+
 // express-session
 app.use(require("express-session")({
     secret: "Color teaches love",
