@@ -7,7 +7,10 @@ const express     =   require('express'),
 // ROUTES
 // index
 router.get("/", (req, res) => {
-  res.redirect("/login");
+  if (req.session.cookie.expires == false){
+    return res.redirect("/login");
+  }
+  res.redirect("/game");
 });
 
 // login
@@ -82,4 +85,8 @@ function isLoggedIn(req, res, next){
   res.redirect("/login");
 }
 
+// other routes
+router.all("*", (req, res) => {
+  res.send("error! This link does not exist");
+});
 module.exports = router;

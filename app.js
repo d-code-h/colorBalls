@@ -1,6 +1,8 @@
 const   express                 =   require("express"),
         app                     =   express(),
+        session                 =   require("express-session"),
         mongoose                =   require("mongoose"),
+        MongoStore              =   require("connect-mongo")(session),
         passport                =   require("passport"),
         LocalStrategy           =   require("passport-local"),
         flash                   =   require("connect-flash"),
@@ -21,10 +23,11 @@ mongoose.connect(url, {
 });
 
 // express-session
-app.use(require("express-session")({
+app.use(session({
     secret: "Color teaches love",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 
@@ -35,7 +38,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
