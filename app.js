@@ -8,7 +8,6 @@ const   express                 =   require("express"),
         flash                   =   require("connect-flash"),
         createError             =   require('http-errors'),
         path                    =   require('path'),
-        cookieParser            =   require('cookie-parser'),
         logger                  =   require('morgan'),
         indexRouter             =   require('./routes/index'),
         User                    =   require("./models/Users"); //index Route
@@ -39,7 +38,6 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
