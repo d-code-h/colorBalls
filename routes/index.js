@@ -85,8 +85,4 @@ function isLoggedIn(req, res, next){
   res.redirect("/login");
 }
 
-// other routes
-router.all("*", (req, res) => {
-  res.send("error! This link does not exist");
-});
 module.exports = router;
