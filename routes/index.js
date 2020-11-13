@@ -7,10 +7,11 @@ const express     =   require('express'),
 // ROUTES
 // index
 router.get("/", (req, res) => {
-  if (req.session.cookie.expires == false){
-    return res.redirect("/login");
+  if (req.session.cookie.originalMaxAge == 604800000){
+    res.redirect("/game");
+  }else {
+    res.redirect("/login");
   }
-  res.redirect("/game");
 });
 
 // login
